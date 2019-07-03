@@ -1,0 +1,22 @@
+// dropdown button
+.dropbtn {
+    background-color: azure;
+    font-size: 16px;
+}
+
+//dropdwon button on hover and focus
+.dropbtn:hover, .dropbtn:focus {
+    background-color: blue
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+// Links insdie dropdown
+.dropdown-content a {
+    color: black;
+
+
+}
