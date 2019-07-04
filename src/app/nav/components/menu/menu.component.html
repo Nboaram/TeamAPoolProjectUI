@@ -1,19 +1,34 @@
 
-
-<div class="btn-group">
-        <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Action
-        </button>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" routerLink="#">Queue</a>
-          <a class="dropdown-item" routerLink="#">Tournament</a>
-          <a class="dropdown-item" routerLink="#">User</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" routerLink="#">Challenge</a>
-          <a class="dropdown-item" routerLink="#">Rules</a>
+<nav class="navbar navbar-expand-lg navbar-light bg-success">
+  <a class="navbar-brand" href="#"><img src="assets/poolLogo.png" width="40" height="40" class="d-inline-block align-top"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="#" routerLinkActive="active"><b>Queue</b><span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="#" routerLinkActive="active"><b>Tournament</b></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="#" routerLinkActive="active"><b>Challenge</b></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" routerLink="#" routerLinkActive="active" id="navbarUser" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <b>User</b>
+        </a>
+        <div class="dropdown-menu py-0" aria-labelledby="navbarUser">
+          <a class="dropdown-item" routerLink="#" routerLinkActive="active"><b>Login</b></a>
+          <a class="dropdown-item" routerLink="#" routerLinkActive="active"><b>Register</b></a>
+          <!-- <div class="dropdown-divider" routerLinkActive="active"></div> -->
+          <a class="dropdown-item" routerLink="#" routerLinkActive="active"><b>Profile</b></a>
         </div>
-      </div>
+      </li>
+    </ul>
+  </div>
+</nav>
 
-<p>menu works!</p>
 
-<button (click)="clicked()">click me!</button>
+

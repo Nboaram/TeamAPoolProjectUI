@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuService } from '../Nav/services/menu.service';
-import { RequestyBoiService } from '../services/requesty-boi.service';
+import { MenuService } from '../services/menu.service';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-menu',
@@ -9,23 +10,35 @@ import { RequestyBoiService } from '../services/requesty-boi.service';
 })
 export class MenuComponent implements OnInit {
 
-  constructor(
-    private menu: MenuService,
-    private requestyboi: RequestyBoiService
-    ) { }
+  loginForm = new FormGroup({
+    username: new FormControl('', Validators.minLength(4)),
+    password: new FormControl('')
+  });
+
+  constructor(private menu: MenuService) { }
 
   ngOnInit(): void {
+
+    this.loginForm.valueChanges.subscribe((val) => {
+      console.log('VALUE', val);
+    });
+
+    // this.username.valueChanges.subscribe((val) => {
+    //   console.log('VALUE', val);
+    // }
+
+    // this.loginForm.
+
   }
 
   clicked(){
-    // this.menu.incrementClickCounter();
+    this.menu.getUserData('https://jsonplaceholder.typicode.com/posts').subscribe((data) => {
 
-    this.requestyboi.get()
-    .subscribe((data) => {
-      console.log('data', data);
-  });
+    for (let x = 0; x < data.length; x++)(
+      console.log('data', data[x].title)
+    )
+    });
+  }
+
 
 }
-
-}
-
