@@ -1,4 +1,11 @@
 // dropdown button
+
+li a:hover {
+
+    color: white;
+    
+    }
+
 .dropbtn {
     background-color: yellow;
     font-size: 16px;
@@ -6,7 +13,7 @@
 
 //dropdwon button on hover and focus
 .dropbtn:hover, .dropbtn:focus {
-    background-color: darkgreen
+    background-color: azure;
 }
 
 .dropdown {
