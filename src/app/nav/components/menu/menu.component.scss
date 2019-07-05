@@ -1,0 +1,38 @@
+// dropdown button
+
+// li a:hover {
+
+//     color: white;
+    
+//     }
+
+.dropbtn {
+    background-color: yellow;
+    font-size: 16px;
+}
+
+//dropdwon button on hover and focus
+.dropbtn:hover, .dropbtn:focus {
+    background-color: azure;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    color: yellow;
+}
+
+// Links inside dropdown
+.dropdown-content a{
+    color: black;
+
+
+}
+
+
+.form-control.ng-valid {
+    border-color: green;
+}
+.form-control.ng-invalid {
+    border-color: red;
+}

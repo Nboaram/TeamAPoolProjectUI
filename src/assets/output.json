@@ -1,4 +1,6 @@
 {
-    "playername" : "adrian",
-    "username": "nboaram"
+    "firstName" : "hello",
+    "lastName" : "world",
+    "id" : "someNumber",
+    "_v" : "secret"}
 }

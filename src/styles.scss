@@ -1,1 +1,60 @@
 /* You can add global styles to this file, and also import other style files */
+// dropdown button
+body {
+    text-align: center;
+    color: rgb(0, 0, 0);
+    text-shadow: 0 0.05rem 0.1rem rgba(0, 0, 0, .5);
+    background-image: url("assets/poolTable.jpg");
+    height: 100%;    
+    border: 2px solid black;
+    background-size: cover;
+}
+
+
+
+.dropbtn { 
+    background-color: yellow;
+    font-size: 16px;
+}
+
+//dropdwon button on hover and focus
+.dropbtn:hover, .dropbtn:focus {
+
+    background-color: rgb(0, 36, 0)
+}
+
+//dropdwon button on hover and focus
+.dropbtn:hover, .dropbtn:focus {
+    background-color: darkgreen
+}
+
+.dropdown-item {
+    position: relative;
+   background-color: darkgreen
+    }
+
+    .dropdown-divider {
+        position: relative;
+       background-color: darkgreen
+       
+        }
+
+// Links insdie dropdown
+// .dropdown-content a{
+//     color: white;
+
+
+// }
+
+footer {
+
+    color: white;
+}
+
+
+.form-control.ng-valid {
+    border-color: green;
+}
+.form-control.ng-invalid {
+    border-color: red;
+}

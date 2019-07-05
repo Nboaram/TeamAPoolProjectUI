@@ -1,0 +1,30 @@
+<p>test works!</p>
+
+<div class="btn-group">
+    <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Menu
+    </button>
+    <div class="dropdown-menu py-0">
+      <a class="dropdown-item" routerLink="/menu" routerLinkActive="active">Queue</a>
+      <a class="dropdown-item" routerLink="#" routerLinkActive="active">Tournament</a>
+      <a class="dropdown-item" routerLink="#" routerLinkActive="active">User</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" routerLink="#" routerLinkActive="active">Challenge</a>
+      <a class="dropdown-item" routerLink="#" routerLinkActive="active">Rules</a>
+    </div>
+  </div>
+
+<!-- <p> {{username.value}} </p> -->
+<br>
+<br>
+
+
+
+<button (click)="clicked()">click me!</button>
+<br>
+<br>
+<form [formGroup]="loginForm">
+  <input type="text" placeholder="username" class="form-control" formControlName="username">
+  <br>
+  <input type="password" placeholder="password" formControlName="password">
+</form>
