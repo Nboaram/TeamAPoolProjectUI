@@ -5,6 +5,7 @@ import { ReactiveFormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AuthModule } from './auth/auth.module';
 import { GamesModule } from './games/games.module';
 
 @NgModule({
@@ -14,6 +15,7 @@ import { GamesModule } from './games/games.module';
   imports: [
     BrowserModule,
     HttpClientModule,
+    AuthModule,
     ReactiveFormsModule,
     AppRoutingModule,
     GamesModule
