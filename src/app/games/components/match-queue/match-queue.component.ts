@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ExampleService } from '../../services/example.service';
+
 
 @Component({
   selector: 'app-match-queue',
@@ -8,12 +8,12 @@ import { ExampleService } from '../../services/example.service';
 })
 export class MatchQueueComponent implements OnInit {
 
-  constructor(private examp: ExampleService) { }
+  constructor() { }
 
   ngOnInit() {
   }
 
   clicked(){
-    this.examp.incrementCounter();
+
   }
 }

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { MatchService } from '../../services/match.service';
 
 @Component({
   selector: 'app-player',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlayerComponent implements OnInit {
 
-  constructor() { }
+  @Input() username: string;
 
-  ngOnInit() {
-  }
+  constructor(private matchService: MatchService) { }
 
+  ngOnInit() { }
+
+  // getPlayer(matchNumber){
+  //       this.matchService.getMatch(matchNumber).subscribe((data) => {
+  //     this.username = data.firstPlayer;
+  //   });
+  // }
 }
+ 

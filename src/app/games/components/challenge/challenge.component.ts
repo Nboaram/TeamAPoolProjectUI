@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ExampleService } from '../../services/example.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-challenge',
@@ -7,17 +7,16 @@ import { ExampleService } from '../../services/example.service';
   styleUrls: ['./challenge.component.scss']
 })
 export class ChallengeComponent implements OnInit {
+ 
 
-  constructor(private examp : ExampleService) { }
+  constructor(private router: Router) 
+    { }
 
   ngOnInit() {
   }
 
   clicked() {
-    this.examp.getUserData()
-      .subscribe((data) => {
-      console.log('data' , data);
-    });
+    this.router.navigate(['/challenge']);
   }
   
 }

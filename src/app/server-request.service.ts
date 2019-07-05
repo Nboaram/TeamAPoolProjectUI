@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -8,8 +8,12 @@ import { Observable } from 'rxjs';
 export class ServerRequestService {
 
   constructor(private http: HttpClient) { }
-
-  get (url : string): Observable<any> {
-    return this.http.get(url);
+  
+  get<T> (url : string): Observable<T> {
+    return this.http.get<T>(url, {
+      headers: new HttpHeaders ( {
+        'Content-Type' : 'application/json'
+      })
+    });
   }
 }
