@@ -1,20 +1,26 @@
 <form [formGroup]='registration'>
-  <div class="col-1-2">
+  <div class="container d-flex justify-content-center">
     <label>Username:</label>
     <input id="username" formControlName="username" placeholder="username">
-    <br>
-    <label>First Name:</label>
-    <input id="firstName" formControlName="firstName" placeholder="first name">
-    <br>
-    <label>Surname:</label>
-    <input id="surname" formControlName="surname" placeholder="surname">
-    <br>
-    <label>Password:</label>
-    <input id="password" formControlName="password">
-    Passwords have a mi
+  </div>
+  <div>
     <br>
   </div>
-  <div class="col-1">
-  <input type="button" value="submit" (click)="onSubmit()">
-</div>
+  <div class="container d-flex justify-content-center">
+    <label>First Name:</label>
+    <input id="firstName" formControlName="firstName" placeholder="first name">
+  </div>
+  <div>
+    <br>
+  </div>
+  <div class="container d-flex justify-content-center">
+    <label>Surname:</label>
+    <input id="surname" formControlName="surname" placeholder="surname">
+  </div>
+  <div>
+    <br>
+  </div>
+  <div class="container d-flex justify-content-center">
+    <input type="button" value="submit" (click)="onRegister()">
+  </div>
 </form>

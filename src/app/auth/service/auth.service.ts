@@ -10,11 +10,17 @@ export class AuthService {
 
   constructor(private request: RequestService) { }
 
-  login(): Observable<IUser> {
-    return this.request.get<IUser>('url');
+  login(login: string): Observable<IUser> {
+    return this.request.get<IUser>('http://localhost:8080/user/' + login);
   }
   register(register: object): Observable<IUser> {
-    return this.request.create('http://localhost:8080/createUser', register);
+    return this.request.create<IUser>('http://localhost:8080/user/', register);
+  }
+  findUser(username: string): Observable<IUser> {
+    return this.request.getUser<IUser>('http://localhost:8080/user/' + username);
+  }
+  delete(username: string): Observable<IUser> {
+    return this.request.deleteUser<IUser>('http://localhost:8080/user/' + username)
   }
 
 }

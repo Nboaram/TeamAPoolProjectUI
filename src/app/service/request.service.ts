@@ -17,14 +17,28 @@ export class RequestService {
       })
     })
   }
-  create(url:string, register: object): Observable <IUser> {
-    // let body = JSON.stringify(register);
+  create<T>(url:string, register: object): Observable <T> {
     console.log(register);
     console.log(url);
-    return this.http.post(url,register, {
+    return this.http.post<T>(url,register, {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
       })
     })
   }
+
+  getUser<T>(url: string): Observable<T> {
+    return this.http.get<T>(url, {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+  })
+}
+deleteUser<T>(url: string): Observable<T> {
+  return this.http.delete<T>(url, {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+  })
+}
 }

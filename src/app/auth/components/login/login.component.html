@@ -1,7 +1,15 @@
-<form [formGroup]>
-  Username:
-  <input id="username" formControlName="username">
-  <br>
-  Password:
-  <input id="password" formControlName="password">
+<form [formGroup]=login>
+  <div class="container d-flex justify-content-center">
+    Username:
+    <input id="username" formControlName="username">
+  </div>
+  <div class="container d-flex justify-content-center">
+    <br>
+    <p id="warning">{{warning}}</p>
+    <br>
+  </div>
+  <div class="container d-flex justify-content-center">
+    <input type="button" value="submit" (click)="onLogin()">
+  </div>
+
 </form>
