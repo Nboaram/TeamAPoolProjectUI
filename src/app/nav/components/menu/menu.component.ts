@@ -10,35 +10,34 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class MenuComponent implements OnInit {
 
-  loginForm = new FormGroup({
-    username: new FormControl('', Validators.minLength(4)),
-    password: new FormControl('')
-  });
-
   constructor(private menu: MenuService) { }
 
   ngOnInit(): void {
-
-    this.loginForm.valueChanges.subscribe((val) => {
-      console.log('VALUE', val);
-    });
-
-    // this.username.valueChanges.subscribe((val) => {
-    //   console.log('VALUE', val);
-    // }
-
-    // this.loginForm.
-
+    sessionStorage.setItem('user', 'testItem');
   }
 
-  clicked(){
-    this.menu.getUserData('https://jsonplaceholder.typicode.com/posts').subscribe((data) => {
+  username = sessionStorage.getItem('user');
 
-    for (let x = 0; x < data.length; x++)(
-      console.log('data', data[x].title)
-    )
+  getUser() {
+    this.menu.getUserData('http//localhost:8080/user/' + this.username).subscribe((data) => {
+
+      for (let x = 0; x < data.length; x++)(
+        console.log('data', data[x].username)
+      )
     });
   }
 
+  deleteMatch() {
+    console.log('delete match method needs inputting here')
+    let username = sessionStorage.getItem("user");
+    this.menu.deleteMatchData(username);
+
+  }
+
+  updateMatch() {
+    console.log('update match method needs inputting here')
+    let username = sessionStorage.getItem("user");
+    this.menu.updateMatchData(username);
+  }
 
 }

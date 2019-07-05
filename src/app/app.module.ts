@@ -7,11 +7,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavModule } from './nav/nav.module';
 import { MenuComponent } from './nav/components/menu/menu.component';
+import { RulesComponent } from './nav/components/rules/rules.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    RulesComponent
   ],
 
   imports: [
