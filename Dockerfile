@@ -1,20 +1,14 @@
-FROM ubuntu as build
-WORKDIR /opt/ui
+FROM node:12-alpine as build
+WORKDIR /build
 COPY . . 
-USER root
-RUN apt update
-RUN apt install -y curl
-RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
-RUN apt-get install -y nodejs
-RUN apt-get install -y build-essential
 RUN NG_CLI_ANALYTICS=ci npm -g install @angular/cli
-RUN NG_CLI_ANALYTICS=ci npm -g install
+RUN NG_CLI_ANALYTICS=ci npm install
 RUN ng build
 #///////////////////
 # NEW STAGE
 #///////////////////
 FROM nginx:alpine
 WORKDIR /app
-COPY --from=build /opt/ui/dist/TeamAPoolProjectUI /app/angularproject
+COPY --from=build /build/dist/TeamAPoolProjectUI /app/angularproject
 COPY nginx.conf /etc/nginx/nginx.conf
 
